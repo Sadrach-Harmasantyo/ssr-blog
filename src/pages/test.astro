@@ -1,0 +1,28 @@
+---
+const name = 'test';
+
+console.log(name); //tidak terlihat di client
+
+const users = [
+    {
+        name: 'user1',
+        age: 1,
+    },
+    {
+        name: 'user2',
+        age: 2,
+    },
+    {
+        name: 'user3',
+        age: 3,
+    }
+]
+---
+
+<ul>
+    {users.map(user => <li>{user.name}</li>)}
+</ul>
+
+<script>
+    console.log('testclient'); //terlihat di client
+</script>

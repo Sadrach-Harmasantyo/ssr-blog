@@ -1,0 +1,21 @@
+---
+const {currPage, totalPages, disablePrev, disableNext} = Astro.props;
+
+interface Props {
+    currPage: number;
+    totalPages: number;
+    disablePrev: boolean;
+    disableNext: boolean;
+}
+---
+
+<!-- Pagination -->
+<div class="flex justify-between mt-10">
+  <a href={"/articles?page=" + (currPage - 1)} class={disablePrev ? "hidden" : "inline-block bg-tertiary px-3 py-2 hover:opacity-90 hover:text-white rounded-lg"}> Previous </a>
+
+  <div>
+    <span class="font-semibold">Page {currPage} of {totalPages}</span>
+  </div>
+
+  <a href={"/articles?page=" + (currPage + 1)} class={disableNext ? "hidden" : "inline-block bg-tertiary px-3 py-2 hover:opacity-90 hover:text-white rounded-lg"}> Next </a>
+</div>
